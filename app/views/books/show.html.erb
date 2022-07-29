@@ -1,0 +1,19 @@
+
+<h2 align="center"> Title: <%= @book.title %> </h2>
+
+<div class="card card-body bg-light" align="center">
+    <h4> Description: <%= @book.description %> </h4>
+    <hr>
+    <h4> Price: $<%= @book.price %> </h4>
+</div>
+<% if @book.categories.any? %>
+    <p> Categories: <%= render @book.categories %> </p>
+<%end%>
+<div class="article-actions margin-left">
+    <%= link_to "View all books", books_path,class:"btn btn-success" %>
+    <div class="margin-btn"></div>
+    <%= button_to "Update", edit_book_path(@book), method: 'get',class:"btn btn-primary" %>
+    <div class="margin-btn"></div>
+    <%= button_to "Delete", book_path(@book), method: "delete", data: {confirm:"Are you sure?"}, class:"btn btn-danger"%>
+</div>
+

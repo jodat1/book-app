@@ -1,0 +1,34 @@
+<h1> Search results </h1>
+
+<% @books.each do |book| %>
+    
+    <div class="row">
+        <div class="col">
+            <div class="card card-body bg-light">
+                <div class="article-title bold">
+
+                    Title: <%= link_to book.title, book_path(book) %>
+
+                </div>
+                <div class="article-body">
+                    Description: <%= truncate(book.description, length: 100)%>
+                </div>
+                <div class="article-price">
+                    Price: $<%= book.price%>
+                </div>
+            </div>
+        </div>
+    </div>
+    <% if book.categories.any?%>
+        <%= render book.categories%>
+
+    <%end%>
+    <div class="article-actions margin-left">
+        
+        <%= button_to "Update", edit_book_path(book), method: 'get',class:"btn btn-primary" %>
+        <div class="margin-btn"></div>
+        <%= button_to "Delete", book_path(book), method: "delete", data: {confirm:"Are you sure?"}, class:"btn btn-danger"%>
+    </div>
+    <br>
+
+<%end%>

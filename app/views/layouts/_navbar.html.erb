@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <%= link_to "Book App", books_path, class:"navbar-brand"%>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Show by categories
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+            <li> <%= link_to "Sports", "sports", class:"dropdown-item"%></li>
+            <li> <%= link_to "Travel", "travel", class:"dropdown-item"%></li>
+            <li> <%= link_to "Entertainment", "entertainment", class:"dropdown-item"%></li>
+            <li><hr class="dropdown-divider"></li>
+            <li> <%= link_to "Sports | Travel", "sports_and_travel", class:"dropdown-item"%></li>
+            <li> <%= link_to "Sports | Entertainment", "sports_and_entertainment", class:"dropdown-item"%></li>
+            <li> <%= link_to "Entertainment | Travel", "entertainment_and_travel", class:"dropdown-item"%></li>
+
+          </ul>
+        </li>
+      </ul>
+
+    
+      <form method = "GET" action = "/ascending">
+        <a name="sort">
+        </a>
+
+        <input type="submit" value="Sort_Ascending"/>
+      </form>
+
+      |
+
+      <form method = "GET" action = "/descending">
+        <a name="sort">
+        </a>
+
+        <input type="submit" value="Sort_Descending"/>
+      </form>
+
+      |
+
+      <form class="d-flex" method = "GET" action = "/search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name = "query" >
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+    </div>
+  </div>
+</nav>
