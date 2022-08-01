@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   # get 'books/show'
   # get 'books/edit'
   # get 'books/new'
-
+  root to: "books#index"
   resources :books
   resources :categories, except: [:destroy]
   get 'search', to: "books#search"
