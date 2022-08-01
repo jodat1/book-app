@@ -4,6 +4,8 @@
 <div class="card card-body bg-light" align="center">
     <h4> Description: <%= @book.description %> </h4>
     <hr>
+    <h4> Image: <%= image_tag(@book.image, style:"width: 100px;") %> </h4>
+    <hr>
     <h4> Price: $<%= @book.price %> </h4>
 </div>
 <% if @book.categories.any? %>
